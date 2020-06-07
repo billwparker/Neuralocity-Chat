@@ -166,6 +166,26 @@
 - I would like to make an appointment.
 - I want to make an appointment
 
+## intent:who_are_you
+- Are you a bot?
+- Are you alive?
+- Are you a chat bot?
+- Are you a real person?
+- You are not real.
+- Are you an AI?
+- Are you a machine?
+- Are you conscious?
+- Are you human?
+
+## intent:say_something_funny
+- Say something funny
+- Are you funny?
+- Do you know any jokes
+- Tell me a joke
+- I want to hear something funny
+- Tell me another joke
+- Do you have a sense of humor?
+
 ## intent:inform
 - [Sitka](location)
 - [Juneau](location)

@@ -16,6 +16,8 @@ intents:
   - what_technologies
   - faq_ask_about_pricing
   - talk_to_someone
+  - who_are_you
+  - say_something_funny
 
 entities:
 - facility_type
@@ -48,11 +50,36 @@ actions:
 - utter_what_technologies
 - utter_faq_pricing
 - utter_talk_to_someone
+- utter_out_of_scope
+- utter_i_am
+- utter_joke
 
 responses:
   utter_greet:
   - text: "Hi. What are you looking for?"
   - text: "Hello! What can I help you with today?"
+
+  utter_out_of_scope:
+  - text: I'm sorry I'm unable to respond to that.
+
+  utter_i_am:
+  - text: Cogito, ergo sum - Rene Descartes. Am I real? Am I a chatbot? Am I conscious? I would answer
+      that by asking if you are real? How do you know that you are real, that you are conscious,
+      that you are human. You have to admit that there's a non-zero probability you are not real. 😃
+    image: https://upload.wikimedia.org/wikipedia/commons/6/6b/Descartes2.jpg
+
+  utter_joke:
+  - text: What did the werewolf say to the bot? (I'm a were of that.)
+  - text: Why did the chicken cross the road? (The answer is trivial and is left as an exercise for the reader.)
+  - text: There was statistician that drowned crossing a river ... It was 3 feet deep on average.
+  - text: A SQL statement walks into a bar sees two tables. It approaches, and asks "may I join you?"
+  - text: I started a band called 999 megabytes ... We still havent' gotten a gig yet.
+  - text: Why was six afraid of seven? Because 7 8 9.
+  - text: What did one math book say to the other? Don't bother me. I've got my own problems!
+  - text: There are three types of mathematicians, those who can count and those who can't.
+  - text: What do you get if you cross a mountain climber with a mosquito? (Nothing, you can't cross a scalar with a vector.)
+  - text: What you call a pirate droid? - Arrrr-2-D2
+  - text: Why did the robot get angry? Because someone kept pushing its buttons.
 
   utter_what_technologies:
   - text: We use a variety of technologies, such as Python, Java, C#, (.Net), Pandas, Jupyter Notebooks,

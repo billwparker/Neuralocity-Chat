@@ -67,3 +67,15 @@
 ## talk_to_someone
 * talk_to_someone
     - utter_talk_to_someone
+
+## story_utter_out_of_scope
+* out_of_scope
+    - utter_out_of_scope
+
+## are_you_real
+* who_are_you
+    - utter_i_am
+
+## joke
+* say_something_funny
+    - utter_joke
