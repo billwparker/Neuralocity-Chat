@@ -14,6 +14,7 @@ intents:
   - thanks
   - out_of_scope
   - faq_ask_what_is_neuralocity
+  - medical
 
 entities:
 - facility_type
@@ -47,13 +48,16 @@ actions:
 responses:
   utter_greet:
   - text: "Hi. What are you looking for?"
-  - text: "Hey there! Please choose one of the healthcare facility options:"
-  - text: "Hello! What can I help you find today?"
+  - text: "Hello! What can I help you with today?"
 
   utter_faq_ask_what_is_neuralocity:
   - text: Neuralocity is a consulting and software company specializing in helping companies
       solve problems with machine learning, statistical analysis, and in developing innovative
       software products.
+
+  utter_medical:
+  - text: "Hey there! Please choose one of the healthcare facility options:"
+  - text: "Hello! What medical facility can I help you find today?"
 
   utter_goodbye:
   - text: "Talk to you later!"

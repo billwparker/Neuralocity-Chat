@@ -21,6 +21,16 @@
 - do you have something else
 - no this does not work for me
 
+## intent:medical
+- Want nearest medical location
+- Looking for a doctor
+- i need a doctor
+- I need a hospital
+- Hospital
+- Medical?
+- Nurse?
+- Nursing Home
+
 ## intent:faq_ask_what_is_neuralocity
 - What is Neuralocity?
 - What is Neualcity?

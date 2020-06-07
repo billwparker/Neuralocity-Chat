@@ -1,5 +1,9 @@
-## happy_path
+## saying_hello
 * greet
+    - utter_greet
+
+## happy_path
+* medical
     - find_facility_types
 * inform{"facility_type": "xubh-q36u"}    
     - facility_form
@@ -12,7 +16,7 @@
     - utter_noworries
 
 ## happy_path_multi_requests
-* greet
+* medical
     - find_facility_types
 * inform{"facility_type": "xubh-q36u"}
     - facility_form

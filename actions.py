@@ -113,7 +113,8 @@ class FindFacilityTypes(Action):
                  "payload": payload})
 
         # TODO: update rasa core version for configurable `button_type`
-        dispatcher.utter_message(template = "utter_greet", buttons = buttons)
+
+        dispatcher.utter_message(template = "utter_medical", buttons = buttons)
         return []
 
 
