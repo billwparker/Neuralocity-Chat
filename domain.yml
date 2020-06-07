@@ -7,14 +7,15 @@ intents:
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
   - inform
   - search_provider
   - thanks
   - out_of_scope
   - faq_ask_what_is_neuralocity
   - medical
+  - what_technologies
+  - faq_ask_about_pricing
+  - talk_to_someone
 
 entities:
 - facility_type
@@ -44,11 +45,26 @@ actions:
 - find_healthcare_address
 - utter_address
 - utter_faq_ask_what_is_neuralocity
+- utter_what_technologies
+- utter_faq_pricing
+- utter_talk_to_someone
 
 responses:
   utter_greet:
   - text: "Hi. What are you looking for?"
   - text: "Hello! What can I help you with today?"
+
+  utter_what_technologies:
+  - text: We use a variety of technologies, such as Python, Java, C#, (.Net), Pandas, Jupyter Notebooks,
+      TensorFlow, SciKit Learn, R, and a variety of visualization frameworks.
+
+  utter_faq_pricing:
+  - text: Call us at(480) 442-1235 or make an appointment at https://calendly.com/williamwparker and
+      we would be happy to talk about pricing for your project.
+
+  utter_talk_to_someone:
+  - text: Hi. You can make an appointment to talk to us at https://calendly.com/williamwparker or 
+      call us at (480) 442-1235.
 
   utter_faq_ask_what_is_neuralocity:
   - text: Neuralocity is a consulting and software company specializing in helping companies

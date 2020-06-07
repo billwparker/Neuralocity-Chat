@@ -55,3 +55,15 @@
 ## story_thankyou
 * thanks
     - utter_noworries
+
+## what_technologies
+* what_technologies
+    - utter_what_technologies
+
+## faq_ask_about_pricing
+* faq_ask_about_pricing
+    - utter_faq_pricing
+
+## talk_to_someone
+* talk_to_someone
+    - utter_talk_to_someone

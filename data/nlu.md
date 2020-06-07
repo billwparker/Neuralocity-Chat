@@ -116,6 +116,56 @@
 - hello robot
 - hi
 
+## intent:thanks
+- Thanks
+- Thank you
+- Thank you so much
+- Thanks bot
+- Thanks for that
+- cheers
+- cheers bro
+- ok thanks!
+- perfect thank you
+- thanks a bunch for everything
+- thanks for the help
+- thanks a lot
+- amazing, thanks
+- cool, thanks
+- cool thank you
+
+## intent:what_technologies
+- What technologies do you use?
+- Do you use Python?
+- Do you use Pandas?
+- Do you use Jupyter Notebooks?
+- Do you use Tensor Flow?
+- TensorFlow?
+- Scikit Learn?
+- Which technologies?
+- What is your technology stack?
+- Do you use Matplotlib for charts?
+- Can you help us with Tableau?
+- How about Plotly?
+- Python, Java, C#?
+
+## intent:faq_ask_about_pricing
+- What is the cost for doing a project with Neuralocity?
+- What is your pricing?
+- How much does it cost?
+- I'm looking for pricing information.
+- We are looking for pricing for building a chatbot for our site.
+- I need some information about cost
+- I need to know about pricing.
+
+## intent:talk_to_someone
+- I would like to talk to Bill
+- I would like to talk to someone
+- I want to talk to someone
+- Could I talk to a real person?
+- I want to talk to a real person.
+- I would like to make an appointment.
+- I want to make an appointment
+
 ## intent:inform
 - [Sitka](location)
 - [Juneau](location)
@@ -273,45 +323,6 @@
 - Good morning i need a [hospital](facility_type) in [Waco](location)
 - Good morning i need a [home health agency](facility_type) in [Clarksville](location)
 - Can you tell me a [nursing home](facility_type) in [Oklahoma City](location) ?
-
-## intent:thanks
-- Thanks
-- Thank you
-- Thank you so much
-- Thanks bot
-- Thanks for that
-- cheers
-- cheers bro
-- ok thanks!
-- perfect thank you
-- thanks a bunch for everything
-- thanks for the help
-- thanks a lot
-- amazing, thanks
-- cool, thanks
-- cool thank you
-
-## intent:mood_great
-- perfect
-- very good
-- great
-- amazing
-- wonderful
-- I am feeling very good
-- I am great
-- I'm good
-
-## intent:mood_unhappy
-- sad
-- very sad
-- unhappy
-- bad
-- very bad
-- awful
-- terrible
-- not very good
-- extremely sad
-- so sad
 
 ## regex:location
 - [0-9]{5}
