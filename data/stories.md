@@ -79,3 +79,7 @@
 ## joke
 * say_something_funny
     - utter_joke
+
+## insult
+* insult
+    - utter_insult_response

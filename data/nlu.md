@@ -21,6 +21,21 @@
 - do you have something else
 - no this does not work for me
 
+## intent:insult
+- I hate you
+- That's a terrible response
+- You are terrible
+- That's a shitty response
+- Fuck you
+- Fuck off
+- I hate this thing
+- You are a piece of shit
+- You are an idiot
+- You are a moron
+- Could you be more stupid
+- That was a stupid response
+- You suck
+
 ## intent:medical
 - Want nearest medical location
 - Looking for a doctor
