@@ -19,6 +19,7 @@ intents:
   - who_are_you
   - say_something_funny
   - insult
+  - weather
 
 entities:
 - facility_type
@@ -64,6 +65,7 @@ actions:
 - utter_ok
 - find_what_to_learn_category
 - find_category_description
+- find_weather
 
 responses:
   utter_greet:

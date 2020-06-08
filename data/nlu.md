@@ -181,6 +181,16 @@
 - I would like to make an appointment.
 - I want to make an appointment
 
+## intent:weather
+- I want to know the weather outside
+- What is the weather?
+- Is it going to rain?
+- Is it windy outside?
+- Weather?
+- I want to know the weather?
+- is it going to be sunny today?
+- Should I wear a jacket today?
+
 ## intent:who_are_you
 - Are you a bot?
 - Are you alive?

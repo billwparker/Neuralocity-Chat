@@ -86,6 +86,9 @@
 * affirm
     - utter_what_else
 
+## weather
+* weather
+    - find_weather
 
 ## story_goodbye
 * goodbye

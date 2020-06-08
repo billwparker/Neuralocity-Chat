@@ -8,6 +8,8 @@ from rasa_sdk import Action
 from rasa_sdk.events import SlotSet, FollowupAction
 from rasa_sdk.forms import FormAction
 
+from actions import keys
+
 # We use the medicare.gov database to find information about 3 different
 # healthcare facility types, given a city name, zip code or facility ID
 # the identifiers for each facility type is given by the medicare database
@@ -311,5 +313,79 @@ class DisplayDescription(Action):
                 standalone, SaaS, or mobile.""")
 
             return []
+
+
+
+def extract_metadata_from_tracker(tracker):
+    events = tracker.current_state()['events']
+    user_events = []
+    for e in events:
+        if e['event'] == 'user':
+            user_events.append(e)
+
+    return user_events[-1]['metadata']            
+
+class FindWeather(Action):
+    """This action class will display description."""
+
+    def name(self) -> Text:
+        """Unique identifier of the action"""
+
+        return "find_weather"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List:
+
+            userIP = extract_metadata_from_tracker(tracker)
+
+            ip = userIP["ipaddress"]
+
+            full_path = f"https://ipinfo.io/{ip}?token={keys.IPINFO}"
+
+            results = requests.get(full_path).json()
+
+            location = results['loc']
+            city = results['city']
+            postal = results['postal']
+
+            locations = location.split(",")
+            lat = locations[0]
+            lon = locations[1]
+
+            api_path = f"api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={keys.WEATHERAPI}&units=imperial"
+
+            results = requests.get(api_path).json()
+
+            temperature = results['main']['temp']
+            humidity = results['main']['humidity']
+            description = results['weather'][0]['description']
+
+            message = "Current temperature is " + str(temperature) + "\u00b0F with " + str(humidity) + "% humidity. " + description + ". "
+
+            if temperature < 50:
+                message += "I would recommend a coat. "            
+            elif temperature < 75:
+                message += "I would recommend a jacket. "
+            else:
+                message += "I would recommend sunscreen. "
+
+            if 'rain' in description.lower():
+                message += "You might want to take an umbrella."
+
+            icon = results['weather'][0]['icon']
+            iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
+
+            dispatcher.utter_message(message, image=iconurl)
+
+            return []
+
+
+
+ 
+
+
+
 
             
