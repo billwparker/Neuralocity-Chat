@@ -140,7 +140,6 @@ responses:
   utter_noworries:
   - text: "My pleasure."
   - text: "You are welcome!"
-  - text: "You're welcome!"
 
   utter_ask_facility_type:
   - text: "Choose one of the following to search for: hospital, nursing home, or home health agency."

@@ -166,6 +166,7 @@
 
 ## intent:faq_ask_about_pricing
 - What is the cost for doing a project with Neuralocity?
+- We are looking for cost information
 - What is your pricing?
 - How much does it cost?
 - I'm looking for pricing information.
