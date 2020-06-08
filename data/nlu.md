@@ -112,6 +112,7 @@
 - i'm off
 - see you later alligator
 - we'll speak soon
+- talk to you later
 
 ## intent:greet
 - Hi
