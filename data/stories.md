@@ -122,6 +122,15 @@
 * say_something_funny
     - utter_joke
 
+## what_can_you_do
+* what_can_you_do
+    - utter_what_I_can_do
+
 ## insult
 * insult
     - utter_insult_response
+
+## best
+* best
+    - find_best_type
+

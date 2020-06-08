@@ -10,6 +10,8 @@ from rasa_sdk.forms import FormAction
 
 from actions import keys
 
+#import keys
+
 # We use the medicare.gov database to find information about 3 different
 # healthcare facility types, given a city name, zip code or facility ID
 # the identifiers for each facility type is given by the medicare database
@@ -354,7 +356,7 @@ class FindWeather(Action):
             lat = locations[0]
             lon = locations[1]
 
-            api_path = f"api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={keys.WEATHERAPI}&units=imperial"
+            api_path = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={keys.WEATHERAPI}&units=imperial"
 
             results = requests.get(api_path).json()
 
@@ -362,7 +364,7 @@ class FindWeather(Action):
             humidity = results['main']['humidity']
             description = results['weather'][0]['description']
 
-            message = "Current temperature is " + str(temperature) + "\u00b0F with " + str(humidity) + "% humidity. " + description + ". "
+            message = "Current temperature is " + str(temperature) + "\u00b0 F with " + str(humidity) + "% humidity. " + description.capitalize() + ". "
 
             if temperature < 50:
                 message += "I would recommend a coat. "            
@@ -375,17 +377,75 @@ class FindWeather(Action):
                 message += "You might want to take an umbrella."
 
             icon = results['weather'][0]['icon']
-            iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
+            iconurl = "https://openweathermap.org/img/w/" + icon + ".png";
 
             dispatcher.utter_message(message, image=iconurl)
 
             return []
 
+class FindBestTypes(Action):
+    """This action class allows to display buttons for each facility type
+    for the user to chose from to fill the facility_type entity slot."""
+
+    def name(self) -> Text:
+        """Unique identifier of the action"""
+
+        return "find_best_type"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List:
+
+        place = tracker.get_slot('place')
 
 
- 
+        userIP = extract_metadata_from_tracker(tracker)
+        
+        ip = userIP['ipaddress']
+
+        full_path = f"https://ipinfo.io/{ip}?token={keys.IPINFO}"
+
+        results = requests.get(full_path).json()
+
+        location = results['loc']
+        #city = results['city']
+        #postal = results['postal']
+
+        #location = "33.307575,-111.844940"
 
 
+        target = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
 
+        params = {
+            "location": location,
+            "radius": 5000,
+            "type": place,
+            "key": keys.GOOGLEAPI
+        }
 
-            
+        response = requests.get(target, params=params)
+
+        found = response.json()
+
+        best_list = []
+        for place in found['results']:
+            if 'rating' in place:
+                best_list.append(place)
+
+        best_list = sorted(best_list, key = lambda i: i['rating'], reverse=True)
+
+        best_list = best_list[:3]
+
+        message = ""
+        for num, place in enumerate(best_list):
+            if num > 0:
+                message += "; "
+            message += place['name']
+            message += ", " + place['vicinity']
+            message += ", " + str(place['rating'])
+
+        dispatcher.utter_message(message)
+
+        return []
+

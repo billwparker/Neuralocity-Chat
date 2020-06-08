@@ -40,6 +40,14 @@
 - That was a stupid response
 - You suck
 
+## intent:what_can_you_do
+- What can you do?
+- What can you tell me?
+- What does this chatbot do?
+- What information can you give me?
+- What do you do?
+- How do you work?
+
 ## intent:medical
 - Want nearest medical location
 - Looking for a doctor
@@ -64,6 +72,7 @@
 - Tell me what is Neuralocity
 - Tell me what is Neuralcity
 - I'm looking for information
+- Tell me about Neuralocity services
 
 ## intent:out_of_scope
 - please help with my ice cream it's dripping
@@ -216,6 +225,21 @@
 - I want to hear something funny
 - Tell me another joke
 - Do you have a sense of humor?
+
+## intent:best
+- What are the best [school](place) in my area?
+- Are there any good [school](place) near me?
+- I'm looking for a great [school](place)
+- What's the best [school](place) around?
+- Am I near a good [school](place)?
+- What are the best [restaurant](place) in my area?
+- Are there any good [restaurant](place) near me?
+- I'm looking for a great [restaurant](place)
+- What's the best [gym](place) around?
+- Am I near a good [gym](place)?
+- What are the best [gym](place) in my area?
+- Are there any good [gym](place) near me?
+- I'm looking for a great [gym](place)
 
 ## intent:inform
 - [Sitka](location)

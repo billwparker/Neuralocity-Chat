@@ -20,6 +20,8 @@ intents:
   - say_something_funny
   - insult
   - weather
+  - what_can_you_do
+  - best
 
 entities:
 - facility_type
@@ -66,6 +68,8 @@ actions:
 - find_what_to_learn_category
 - find_category_description
 - find_weather
+- utter_what_I_can_do
+- find_best_type
 
 responses:
   utter_greet:
@@ -93,6 +97,10 @@ responses:
   - text: What do you get if you cross a mountain climber with a mosquito? (Nothing, you can't cross a scalar with a vector.)
   - text: What you call a pirate droid? - Arrrr-2-D2
   - text: Why did the robot get angry? Because someone kept pushing its buttons.
+
+  utter_what_I_can_do:
+  - text: I can tell you about Neuralocity services. I can also tell you the weather, tell you a joke, or give you 
+      information about the best places near you.
 
   utter_insult_response:
   - text: That's not very nice. 😢
