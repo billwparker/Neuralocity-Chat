@@ -23,6 +23,10 @@
 
 ## intent:insult
 - I hate you
+- You are stupid
+- This is really dumb
+- You are a pussy
+- I want to kill you
 - That's a terrible response
 - You are terrible
 - That's a shitty response
