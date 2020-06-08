@@ -238,3 +238,78 @@ class FacilityForm(FormAction):
 
         return []
 
+CATEGORY_TYPES = {
+    "machine_learning":
+        {
+            "name": "machine learning",
+            "resource": "MACHINELEARNING"
+        },
+    "statistical_analysis":
+        {
+            "name": "statistical analysis",
+            "resource": "STATISTICALANALYSIS"
+        },
+    "software_consulting":
+        {
+            "name": "software consulting",
+            "resource": "SOFTWARECONSULTING"
+        }
+}
+
+class WhatToLearnCategoryTypes(Action):
+    """This action class allows to display buttons for each category type
+    for the user to chose from to fill the category_type entity slot."""
+
+    def name(self) -> Text:
+        """Unique identifier of the action"""
+
+        return "find_what_to_learn_category"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List:
+
+        buttons = []
+        for t in CATEGORY_TYPES:
+            category_type = CATEGORY_TYPES[t]
+            payload = "/inform{\"category_type\": \"" + category_type.get(
+                "resource") + "\"}"
+
+            buttons.append(
+                {"title": "{}".format(category_type.get("name").title()),
+                 "payload": payload})
+        
+        dispatcher.utter_message(text = "Which would you like more information on: ", buttons = buttons)
+
+        return []
+
+class DisplayDescription(Action):
+    """This action class will display description."""
+
+    def name(self) -> Text:
+        """Unique identifier of the action"""
+
+        return "find_category_description"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List:
+
+            category_type = tracker.get_slot('category_type')
+
+            if category_type == "MACHINELEARNING":
+                dispatcher.utter_message("""Neuralocity provides unique machine learning solution
+                    in predicting customer behavior and outcomes. We can use natural language processing
+                    to better understand your customers.""")
+            elif category_type == "STATISTICALANALYSIS":
+                dispatcher.utter_message("""We have many years of applying predictive analytics, choice
+                modeling, segmentation, and optimization.""")
+            else:
+                dispatcher.utter_message("""We provide customer software solutions that can be 
+                standalone, SaaS, or mobile.""")
+
+            return []
+
+            

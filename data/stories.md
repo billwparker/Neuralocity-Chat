@@ -47,6 +47,45 @@
 ## ask_what_is_neuralocity
 * faq_ask_what_is_neuralocity
     - utter_faq_ask_what_is_neuralocity
+    - utter_would_you_like_to_learn_more_about_neuralocity
+* affirm
+    - find_what_to_learn_category
+* inform{"category_type": "Machine Leanring"}
+    - find_category_description
+    - utter_anything_else
+* affirm
+    - utter_what_else
+
+## ask_what_is_neuralocity
+* faq_ask_what_is_neuralocity
+    - utter_faq_ask_what_is_neuralocity
+    - utter_would_you_like_to_learn_more_about_neuralocity
+* affirm
+    - find_what_to_learn_category
+* inform{"category_type": "Machine Leanring"}
+    - find_category_description
+    - utter_anything_else
+* deny
+    - utter_ok
+
+## ask_what_is_neuralocity
+* faq_ask_what_is_neuralocity
+    - utter_faq_ask_what_is_neuralocity
+    - utter_would_you_like_to_learn_more_about_neuralocity
+* deny
+    - utter_anything_else
+* deny
+    - utter_ok
+
+## ask_what_is_neuralocity
+* faq_ask_what_is_neuralocity
+    - utter_faq_ask_what_is_neuralocity
+    - utter_would_you_like_to_learn_more_about_neuralocity
+* deny
+    - utter_anything_else
+* affirm
+    - utter_what_else
+
 
 ## story_goodbye
 * goodbye

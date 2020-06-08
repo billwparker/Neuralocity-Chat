@@ -24,8 +24,11 @@ entities:
 - facility_type
 - facility_id
 - location
+- category_type
 
 slots:
+  category_type:
+    type: unfeaturized
   facility_type:
     type: unfeaturized
   facility_address:
@@ -48,6 +51,7 @@ actions:
 - find_healthcare_address
 - utter_address
 - utter_faq_ask_what_is_neuralocity
+- utter_would_you_like_to_learn_more_about_neuralocity
 - utter_what_technologies
 - utter_faq_pricing
 - utter_talk_to_someone
@@ -55,6 +59,11 @@ actions:
 - utter_i_am
 - utter_joke
 - utter_insult_response
+- utter_anything_else
+- utter_what_else
+- utter_ok
+- find_what_to_learn_category
+- find_category_description
 
 responses:
   utter_greet:
@@ -104,6 +113,18 @@ responses:
   - text: Neuralocity is a consulting and software company specializing in helping companies
       solve problems with machine learning, statistical analysis, and in developing innovative
       software products.
+
+  utter_would_you_like_to_learn_more_about_neuralocity:
+  - text: Would you like to learn more?
+
+  utter_anything_else:
+  - text: Is there anything else I can help you with?
+
+  utter_what_else:
+  - text: What else can I help you with?
+
+  utter_ok:
+  - text: Okay.
 
   utter_medical:
   - text: "Hey there! Please choose one of the healthcare facility options:"
