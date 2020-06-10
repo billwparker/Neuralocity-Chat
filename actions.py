@@ -399,7 +399,6 @@ class FindBestTypes(Action):
 
         place = tracker.get_slot('place')
 
-
         userIP = extract_metadata_from_tracker(tracker)
         
         ip = userIP['ipaddress']
@@ -409,11 +408,11 @@ class FindBestTypes(Action):
         results = requests.get(full_path).json()
 
         location = results['loc']
+
         #city = results['city']
         #postal = results['postal']
 
         #location = "33.307575,-111.844940"
-
 
         target = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
 

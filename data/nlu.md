@@ -47,6 +47,7 @@
 - What information can you give me?
 - What do you do?
 - How do you work?
+- What can I ask you?
 
 ## intent:medical
 - Want nearest medical location
@@ -56,6 +57,7 @@
 - Hospital
 - Medical?
 - Nurse?
+- Doctor?
 - Nursing Home
 
 ## intent:faq_ask_what_is_neuralocity

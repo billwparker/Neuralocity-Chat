@@ -28,6 +28,7 @@ entities:
 - facility_id
 - location
 - category_type
+- place
 
 slots:
   category_type:
@@ -39,6 +40,8 @@ slots:
   facility_id:
     type: unfeaturized
   location:
+    type: unfeaturized
+  place:
     type: unfeaturized
 
 forms:
