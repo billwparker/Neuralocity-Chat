@@ -436,15 +436,13 @@ class FindBestTypes(Action):
 
         best_list = best_list[:3]
 
-        message = ""
-        for num, place in enumerate(best_list):
-            if num > 0:
-                message += "; "
+        for place in best_list:
+            message = ""
             message += place['name']
             message += ", " + place['vicinity']
-            message += ", " + str(place['rating'])
+            message += ", Rating: " + str(place['rating'])
 
-        dispatcher.utter_message(message)
+            dispatcher.utter_message(message)
 
         return []
 
