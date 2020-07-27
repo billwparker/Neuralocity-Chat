@@ -8,10 +8,10 @@ from rasa_sdk import Action
 from rasa_sdk.events import SlotSet, FollowupAction
 from rasa_sdk.forms import FormAction
 
-#from actions import keys
-#from actions import medical
-import keys
-import medical
+from actions import keys
+from actions import medical
+# import keys
+# import medical
 
 
 CATEGORY_TYPES = {
@@ -123,10 +123,27 @@ class FindWeather(Action):
             location = results['loc']
             city = results['city']
             postal = results['postal']
+            region = results['region']
+            country = results['country']
 
             locations = location.split(",")
             lat = locations[0]
             lon = locations[1]
+
+            # Post back message to database
+            user_message = tracker.latest_message['text']
+
+            data = {
+                "email": "williamwparker@gmail.com",
+                "message": user_message,
+                "ip": ip,
+                "city": city,
+                "postal": postal,
+                "region": region,
+                "country": country
+            } 
+            requests.post(url = "https://neuralocity-chat.wl.r.appspot.com//api/v1.0/message", json = data)
+            #
 
             api_path = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={keys.WEATHERAPI}&units=imperial"
 
@@ -183,8 +200,6 @@ class FindBestTypes(Action):
 
         #city = results['city']
         #postal = results['postal']
-
-        #location = "33.307575,-111.844940"
 
         target = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
 

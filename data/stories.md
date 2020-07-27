@@ -50,7 +50,7 @@
     - utter_would_you_like_to_learn_more_about_neuralocity
 * affirm
     - find_what_to_learn_category
-* inform{"category_type": "Machine Leanring"}
+* inform{"category_type": "Machine Learning"}
     - find_category_description
     - utter_anything_else
 * affirm
